@@ -1,5 +1,6 @@
 package com.example.photo_dev;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.airbnb.lottie.LottieAnimationView;
@@ -9,6 +10,7 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 
@@ -33,9 +35,11 @@ public class Developer extends AppCompatActivity {
         Button agiStopBTN = (Button) findViewById(R.id.agiBTN2);
 
         lottieAnimationView = findViewById(R.id.potionAnimation);
-        lottieAnimationView.setVisibility(View.VISIBLE);
+
 
         agiBTN.setVisibility(View.GONE);
+
+        lottieAnimationView.setVisibility(View.VISIBLE);
         lottieAnimationView.playAnimation();
 
         agiStopBTN.setVisibility(View.VISIBLE);
@@ -44,11 +48,28 @@ public class Developer extends AppCompatActivity {
     public void stop(View v){
 
         lottieAnimationView = findViewById(R.id.potionAnimation);
+        lottieAnimationView.setVisibility(View.GONE);
         Button agiStopBTN = (Button) findViewById(R.id.agiBTN2);
+        agiStopBTN.setVisibility(View.GONE);
 
+        lottieAnimationView = findViewById(R.id.checkAnimation);
         lottieAnimationView.setVisibility(View.VISIBLE);
+        lottieAnimationView.playAnimation();
 
-        agiStopBTN.setVisibility(View.VISIBLE);
+        new Handler().postDelayed(new Runnable() {
+            public void run() {
+
+                Intent intent = new Intent();
+                intent.setClass(Developer.this,
+                        StopBath.class);
+
+                Developer.this.startActivity(intent);
+                Developer.this.finish();
+
+            }
+        }, ANIMATION_DISPLAY_TIME);
+
+
 
     }
 
