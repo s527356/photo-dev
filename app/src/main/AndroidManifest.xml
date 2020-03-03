@@ -9,21 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreen"
-            android:theme = "@style/SplashScreen">
+        <activity
+            android:name=".StopBath"
+            android:label="@string/title_activity_stop_bath"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".Developer"
+            android:label="@string/title_activity_developer"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SplashScreen"
+            android:theme="@style/SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
-        <activity android:name=".MainActivity"
-            android:theme = "@style/AppTheme">
-
-
-        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>
