@@ -2,19 +2,15 @@ package com.example.photo_dev;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.animation.Animator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextSwitcher;
 import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.xw.repo.BubbleSeekBar;
-
-import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,14 +22,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BubbleSeekBar bubbleSeekBar = (BubbleSeekBar) findViewById(R.id.seekBar);
+        BubbleSeekBar bubbleSeekBar = findViewById(R.id.seekBar);
 
-        final TextView textView = (TextView) findViewById(R.id.txtView);
+        final TextView tempTV = findViewById(R.id.tempTV);
 
         bubbleSeekBar.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
             public void onProgressChanged(BubbleSeekBar bubbleSeekBar, int progress, float progressFloat, boolean fromUser) {
-                textView.setText(String.format("Temperature: %d ˚Celsius", progress));
+                tempTV.setText(String.format("Temperature: %d ˚Fahrenheit", progress));
             }
 
             @Override
@@ -51,17 +47,17 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void start(View v) {
-        BubbleSeekBar bubbleSeekBar = (BubbleSeekBar) findViewById(R.id.seekBar);
-        TextView textView = (TextView) findViewById(R.id.txtView);
-        TextView textView2 = (TextView) findViewById(R.id.txtView2);
-        Button startBTN = (Button) findViewById(R.id.startBTN);
-        Intent ini = new Intent(this, Developer.class);
+        BubbleSeekBar bubbleSeekBar = findViewById(R.id.seekBar);
+        TextView tempTV = findViewById(R.id.tempTV);
+        TextView tempMessageTV = findViewById(R.id.tempMessageTV);
+        Button startBTN = findViewById(R.id.startBTN);
+        Intent intent = new Intent(this, Developer.class);
 
         bubbleSeekBar.setVisibility(View.GONE);
 
-        textView.setVisibility(View.GONE);
+        tempTV.setVisibility(View.GONE);
 
-        textView2.setVisibility(View.GONE);
+        tempMessageTV.setVisibility(View.GONE);
 
         startBTN.setVisibility(View.GONE);
 
@@ -71,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
 
         new Handler().postDelayed(new Runnable() {
             public void run() {
-
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this,
                         Developer.class);

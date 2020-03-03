@@ -36,7 +36,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtView"
+        android:id="@+id/tempTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -51,7 +51,7 @@
     </TextView>
 
     <TextView
-        android:id="@+id/txtView2"
+        android:id="@+id/tempMessageTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="monospace"
