@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">photo-dev</string>
+    <string name="title_activity_developer">Developer</string>
+    <string name="title_activity_stop_bath">StopBath</string>
 </resources>
