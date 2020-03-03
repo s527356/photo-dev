@@ -42,6 +42,7 @@
         android:id="@+id/agiBTN2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="stop"
         android:text="STOP AGITATION"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,5 +51,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.878" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/checkAnimation"
+        android:layout_width="match_parent"
+        android:layout_height="401dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499"
+
+        android:visibility="invisible"
+
+        app:lottie_rawRes="@raw/check"
+        app:lottie_autoPlay = "false"
+        app:lottie_loop = "false"
+
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
