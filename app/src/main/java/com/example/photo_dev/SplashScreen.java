@@ -12,12 +12,9 @@ public class SplashScreen extends AppCompatActivity {
 
     private static final int SPLASH_DISPLAY_TIME = 2500;
 
-
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
         new Handler().postDelayed(new Runnable() {
             public void run() {
@@ -31,7 +28,5 @@ public class SplashScreen extends AppCompatActivity {
 
             }
         }, SPLASH_DISPLAY_TIME);
-
-
     }
 }

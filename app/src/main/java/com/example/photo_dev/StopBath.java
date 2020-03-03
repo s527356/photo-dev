@@ -22,12 +22,10 @@ public class StopBath extends AppCompatActivity {
     }
 
     public void start(View v){
-
         Button bathBTN = (Button) findViewById(R.id.bathBTN);
         Button bathBTN2 = (Button) findViewById(R.id.bathBTN2);
 
         lottieAnimationView = findViewById(R.id.bathAnimation);
-
 
         bathBTN.setVisibility(View.GONE);
 
@@ -44,12 +42,8 @@ public class StopBath extends AppCompatActivity {
         Button bathBTN2 = (Button) findViewById(R.id.bathBTN2);
         bathBTN2.setVisibility(View.GONE);
 
-
-
         lottieAnimationView = findViewById(R.id.soonAnimation);
         lottieAnimationView.setVisibility(View.VISIBLE);
         lottieAnimationView.playAnimation();
-
     }
-
 }

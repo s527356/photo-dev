@@ -26,9 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         BubbleSeekBar bubbleSeekBar = (BubbleSeekBar) findViewById(R.id.seekBar);
-
 
         final TextView textView = (TextView) findViewById(R.id.txtView);
 
@@ -49,12 +47,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
 
     public void start(View v) {
-
         BubbleSeekBar bubbleSeekBar = (BubbleSeekBar) findViewById(R.id.seekBar);
         TextView textView = (TextView) findViewById(R.id.txtView);
         TextView textView2 = (TextView) findViewById(R.id.txtView2);
@@ -72,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
         lottieAnimationView = findViewById(R.id.checkAnimation);
         lottieAnimationView.setVisibility(View.VISIBLE);
         lottieAnimationView.playAnimation();
-
 
         new Handler().postDelayed(new Runnable() {
             public void run() {

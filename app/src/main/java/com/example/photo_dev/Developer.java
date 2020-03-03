@@ -16,23 +16,18 @@ public class Developer extends AppCompatActivity {
     LottieAnimationView lottieAnimationView;
     private static final int ANIMATION_DISPLAY_TIME = 3000;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_developer);
 
-
-
     }
 
-    public void start(View v){
-
+    public void start(View v) {
         Button agiBTN = (Button) findViewById(R.id.agiBTN);
         Button agiStopBTN = (Button) findViewById(R.id.agiBTN2);
 
         lottieAnimationView = findViewById(R.id.potionAnimation);
-
 
         agiBTN.setVisibility(View.GONE);
 
@@ -42,7 +37,7 @@ public class Developer extends AppCompatActivity {
         agiStopBTN.setVisibility(View.VISIBLE);
     }
 
-    public void stop(View v){
+    public void stop(View v) {
 
         lottieAnimationView = findViewById(R.id.potionAnimation);
         lottieAnimationView.setVisibility(View.GONE);
@@ -65,9 +60,5 @@ public class Developer extends AppCompatActivity {
 
             }
         }, ANIMATION_DISPLAY_TIME);
-
-
-
     }
-
 }
