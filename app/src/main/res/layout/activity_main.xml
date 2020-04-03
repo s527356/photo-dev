@@ -13,27 +13,26 @@
         android:layout_width="334dp"
         android:layout_height="39dp"
 
+        android:layout_marginTop="20dp"
         app:bsb_bubble_color="#39796b"
         app:bsb_bubble_text_color="@android:color/white"
         app:bsb_max="80"
+
+
         app:bsb_min="50"
-
-
         app:bsb_progress="0"
         app:bsb_second_track_color="#004d40"
         app:bsb_section_count="5"
-        app:bsb_section_text_position="bottom_sides"
 
+        app:bsb_section_text_position="bottom_sides"
         app:bsb_show_progress_in_float="false"
         app:bsb_show_section_mark="true"
         app:bsb_show_section_text="true"
         app:bsb_show_thumb_text="true"
         app:bsb_track_color="#39796b"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tempMessageTV" />
 
     <TextView
         android:id="@+id/tempTV"
@@ -54,15 +53,13 @@
         android:id="@+id/tempMessageTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="280dp"
         android:fontFamily="monospace"
         android:text="@string/select_temperature_of_developer"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.326"
         tools:text="Select Temperature of Developer" />
 
     <Button
@@ -70,14 +67,15 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
         android:onClick="start"
         android:text="@string/start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.751" />
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+        app:layout_constraintVertical_bias="0.008" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/checkAnimation"
