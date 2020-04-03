@@ -42,6 +42,7 @@
         android:layout_gravity="center_horizontal"
         android:fontFamily="monospace"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/seekBar">
 
     </TextView>

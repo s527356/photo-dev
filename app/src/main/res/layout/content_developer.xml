@@ -10,6 +10,7 @@
 
     <Button
         android:id="@+id/startDevBN"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/start_developer"
@@ -39,9 +40,10 @@
 
     <Button
         android:id="@+id/stopDevBN"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/title_activity_stop_bath"
+        android:text="@string/proceed_to_stop_bath"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,8 +56,8 @@
         android:id="@+id/timerTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="164dp"
-        android:textColor="#2A2A2A"
+        android:layout_marginTop="116dp"
+        android:textColor="#000000"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
