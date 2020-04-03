@@ -42,7 +42,6 @@
         android:layout_gravity="center_horizontal"
         android:fontFamily="monospace"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/checkAnimation"
         app:layout_constraintTop_toBottomOf="@+id/seekBar">
 
     </TextView>
@@ -61,11 +60,10 @@
         tools:text="Select Temperature of Developer" />
 
     <Button
-        android:id="@+id/startBTN"
+        android:id="@+id/startBN"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="start"
         android:text="@string/start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,24 +71,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tempTV"
         app:layout_constraintVertical_bias="0.101" />
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/checkAnimation"
-        android:layout_width="match_parent"
-        android:layout_height="401dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-
-        app:layout_constraintTop_toTopOf="parent"
-
-        app:lottie_autoPlay="false"
-        app:lottie_loop="false"
-        app:lottie_rawRes="@raw/check"
-
-        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
