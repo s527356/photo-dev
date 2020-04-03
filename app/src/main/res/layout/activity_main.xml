@@ -15,8 +15,8 @@
 
         app:bsb_bubble_color="#39796b"
         app:bsb_bubble_text_color="@android:color/white"
-        app:bsb_max="100"
-        app:bsb_min="0"
+        app:bsb_max="80"
+        app:bsb_min="50"
 
 
         app:bsb_progress="0"
@@ -55,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="monospace"
-        android:text="Select Temperature of Developer"
+        android:text="@string/select_temperature_of_developer"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,10 +67,11 @@
 
     <Button
         android:id="@+id/startBTN"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="start"
-        android:text="START"
+        android:text="@string/start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -82,22 +83,19 @@
         android:id="@+id/checkAnimation"
         android:layout_width="match_parent"
         android:layout_height="401dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
 
-        android:visibility="invisible"
-
+        app:lottie_autoPlay="false"
+        app:lottie_loop="false"
         app:lottie_rawRes="@raw/check"
-        app:lottie_autoPlay = "false"
-        app:lottie_loop = "false"
 
         />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
