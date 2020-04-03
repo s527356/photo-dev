@@ -13,7 +13,7 @@
         android:layout_width="334dp"
         android:layout_height="39dp"
 
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="44dp"
         app:bsb_bubble_color="#39796b"
         app:bsb_bubble_text_color="@android:color/white"
         app:bsb_max="80"
@@ -31,6 +31,7 @@
         app:bsb_show_thumb_text="true"
         app:bsb_track_color="#39796b"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tempMessageTV" />
 
@@ -40,12 +41,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:fontFamily="monospace"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.568">
+        app:layout_constraintStart_toStartOf="@+id/checkAnimation"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar">
 
     </TextView>
 
@@ -53,7 +51,7 @@
         android:id="@+id/tempMessageTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="264dp"
         android:fontFamily="monospace"
         android:text="@string/select_temperature_of_developer"
         android:textSize="18sp"
@@ -67,15 +65,14 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
         android:onClick="start"
         android:text="@string/start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar"
-        app:layout_constraintVertical_bias="0.008" />
+        app:layout_constraintTop_toBottomOf="@+id/tempTV"
+        app:layout_constraintVertical_bias="0.101" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/checkAnimation"
