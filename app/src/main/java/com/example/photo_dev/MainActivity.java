@@ -2,6 +2,7 @@ package com.example.photo_dev;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView tempTV = findViewById(R.id.tempTV);
 
         bubbleSeekBar.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
+            @SuppressLint("DefaultLocale")
             @Override
             public void onProgressChanged(BubbleSeekBar bubbleSeekBar, int progress, float progressFloat, boolean fromUser) {
                 tempTV.setText(String.format("Temperature: %d ˚Fahrenheit", progress));
