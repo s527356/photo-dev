@@ -14,7 +14,8 @@ import com.xw.repo.BubbleSeekBar;
 public class MainActivity extends AppCompatActivity {
 
     int temperature = 70;
-    TextView tempTV;
+    double totalTime;
+    TextView tempTV, timeInfoTV;
     BubbleSeekBar bubbleSeekBar;
     Button startBN;
 
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         bubbleSeekBar = findViewById(R.id.seekBar);
         tempTV = findViewById(R.id.tempTV);
+        timeInfoTV = findViewById(R.id.timeInfoTV);
         startBN = findViewById(R.id.startBN);
 
         startBN.setOnClickListener(v -> start());
@@ -35,6 +37,62 @@ public class MainActivity extends AppCompatActivity {
             public void onProgressChanged(BubbleSeekBar bubbleSeekBar, int progress, float progressFloat, boolean fromUser) {
                 tempTV.setText(String.format("Temperature: %d ˚Fahrenheit", progress));
                 temperature = progress;
+
+                if (temperature == 65) {
+                    totalTime = 7.5 + 28.5;
+                    timeInfoTV.setText("Development time: " + totalTime + " minutes");
+                }
+
+                else if (temperature == 66) {
+                    totalTime = 7.25 + 28.5;
+                    timeInfoTV.setText("Development time: " + totalTime + " minutes");
+                }
+
+                else if (temperature == 67) {
+                    totalTime = 7 + 28.5;
+                    timeInfoTV.setText("Development time: " + totalTime + " minutes");
+                }
+
+                else if (temperature == 68) {
+                    totalTime = 6.5 + 28.5;
+                    timeInfoTV.setText("Development time: " + totalTime + " minutes");
+                }
+
+                else if (temperature == 69) {
+                    totalTime = 6 + 28.5;
+                    timeInfoTV.setText("Development time: " + totalTime + " minutes");
+                }
+
+                else if (temperature == 70) {
+                    totalTime = 5.5 + 28.5;
+                    timeInfoTV.setText("Development time: " + totalTime + " minutes");
+                }
+
+                else if (temperature == 71) {
+                    totalTime = 5.25 + 28.5;
+                    timeInfoTV.setText("Development time: " + totalTime + " minutes");
+                }
+
+                else if (temperature == 72) {
+                    totalTime = 5 + 28.5;
+                    timeInfoTV.setText("Development time: " + totalTime + " minutes");
+                }
+
+                else if (temperature == 73) {
+                    totalTime = 4.75 + 28.5;
+                    timeInfoTV.setText("Development time: " + totalTime + " minutes");
+                }
+
+                else if (temperature == 74) {
+                    totalTime = 4.5 + 28.5;
+                    timeInfoTV.setText("Development time: " + totalTime + " minutes");
+                }
+
+                else if (temperature == 75) {
+                    totalTime = 4.25 + 28.5;
+                    timeInfoTV.setText("Development time: " + totalTime + " minutes");
+                }
+
             }
 
             @Override
