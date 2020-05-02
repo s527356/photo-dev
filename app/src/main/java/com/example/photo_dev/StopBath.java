@@ -59,7 +59,9 @@ public class StopBath extends AppCompatActivity {
 
     public void stop() {
         Intent intent = new Intent();
-        intent.setClass(StopBath.this, Fixer.class);
+        intent.setClass(StopBath.this,
+                Fixer.class);
+
         StopBath.this.startActivity(intent);
         StopBath.this.finish();
     }
