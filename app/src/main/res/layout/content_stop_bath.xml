@@ -8,11 +8,24 @@
     tools:context=".StopBath"
     tools:showIn="@layout/activity_stop_bath">
 
-    <Button
-        android:id="@+id/bathBTN"
+    <TextView
+        android:id="@+id/bathTimerTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="start"
+        android:textColor="#000000"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.17" />
+
+    <Button
+        android:id="@+id/startBathBN"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="206dp"
+        android:layout_height="212dp"
         android:text="Start Bath"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,11 +54,11 @@
         />
 
     <Button
-        android:id="@+id/bathBTN2"
+        android:id="@+id/stopBathBN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="stop"
-        android:text="STOP Bath"
+        android:text="Proceed to Fixer"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,7 +67,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.878" />
 
-<!--    <com.airbnb.lottie.LottieAnimationView-->
+    <!--    <com.airbnb.lottie.LottieAnimationView-->
 <!--        android:id="@+id/checkAnimation"-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="401dp"-->
