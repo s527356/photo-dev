@@ -58,9 +58,9 @@ public class StopBath extends AppCompatActivity {
     }
 
     public void stop() {
-        lottieAnimationView = findViewById(R.id.bathAnimation);
-        lottieAnimationView.setVisibility(View.GONE);
-        Button bathBTN2 = (Button) findViewById(R.id.stopBathBN);
-        bathBTN2.setVisibility(View.GONE);
+        Intent intent = new Intent();
+        intent.setClass(StopBath.this, Fixer.class);
+        StopBath.this.startActivity(intent);
+        StopBath.this.finish();
     }
 }

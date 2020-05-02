@@ -105,9 +105,7 @@ public class Developer extends AppCompatActivity {
     // Should reset timer or go back to the beginning?
     public void stop() {
         Intent intent = new Intent();
-        intent.setClass(Developer.this,
-            StopBath.class);
-
+        intent.setClass(Developer.this, StopBath.class);
         Developer.this.startActivity(intent);
         Developer.this.finish();
     }

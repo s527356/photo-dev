@@ -8,4 +8,6 @@
     <string name="proceed_to_stop_bath">Proceed to Stop Bath</string>
     <string name="start_bath">Start Bath</string>
     <string name="proceed_to_fixer">Proceed to Fixer</string>
+    <string name="rinse_5_6_times">Rinse 5-6 Times</string>
+    <string name="proceed_to_hypo_clear">Proceed to Hypo-Clear</string>
 </resources>
