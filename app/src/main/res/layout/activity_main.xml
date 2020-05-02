@@ -16,10 +16,10 @@
         android:layout_marginTop="44dp"
         app:bsb_bubble_color="#39796b"
         app:bsb_bubble_text_color="@android:color/white"
-        app:bsb_max="80"
+        app:bsb_max="75"
 
 
-        app:bsb_min="50"
+        app:bsb_min="65"
         app:bsb_progress="0"
         app:bsb_second_track_color="#004d40"
         app:bsb_section_count="5"
