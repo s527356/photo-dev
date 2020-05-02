@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -12,6 +13,7 @@ import com.xw.repo.BubbleSeekBar;
 
 public class MainActivity extends AppCompatActivity {
 
+    int temperature = 70;
     TextView tempTV;
     BubbleSeekBar bubbleSeekBar;
     Button startBN;
@@ -32,17 +34,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(BubbleSeekBar bubbleSeekBar, int progress, float progressFloat, boolean fromUser) {
                 tempTV.setText(String.format("Temperature: %d ˚Fahrenheit", progress));
+                temperature = progress;
             }
 
             @Override
-            public void getProgressOnActionUp(BubbleSeekBar bubbleSeekBar, int progress, float progressFloat) {
-
-            }
+            public void getProgressOnActionUp(BubbleSeekBar bubbleSeekBar, int progress, float progressFloat) { }
 
             @Override
-            public void getProgressOnFinally(BubbleSeekBar bubbleSeekBar, int progress, float progressFloat, boolean fromUser) {
-
-            }
+            public void getProgressOnFinally(BubbleSeekBar bubbleSeekBar, int progress, float progressFloat, boolean fromUser) { }
         });
 
     }
@@ -50,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     public void start() {
         Intent intent = new Intent();
         intent.setClass(this, Developer.class);
+        intent.putExtra("temperature", temperature);
         MainActivity.this.startActivity(intent);
         MainActivity.this.finish();
     }

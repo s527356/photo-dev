@@ -17,6 +17,8 @@ public class Developer extends AppCompatActivity {
     TextView timerTV;
     Button startDevBN, stopDevBN;
     LottieAnimationView lottieAnimationView;
+    int temperature;
+    double totalTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,9 @@ public class Developer extends AppCompatActivity {
 
         startDevBN.setOnClickListener(v -> start());
         stopDevBN.setOnClickListener(v -> stop());
+
+        Intent intent = getIntent();
+        temperature = intent.getIntExtra("temperature", 70);
     }
 
     public void start() {
@@ -53,6 +58,23 @@ public class Developer extends AppCompatActivity {
         lottieAnimationView.setVisibility(View.VISIBLE);
         lottieAnimationView.playAnimation();
         stopDevBN.setVisibility(View.VISIBLE);
+    }
+
+    // Finds total development time based on Kodak development chart for 400TX film
+    private void calculateTimer() {
+        switch (temperature) {
+            case 65: totalTime = 7.5;
+            case 66: totalTime = 7.25;
+            case 67: totalTime = 7;
+            case 68: totalTime = 6.5;
+            case 69: totalTime = 6;
+            case 70: totalTime = 5.5;
+            case 71: totalTime = 5.25;
+            case 72: totalTime = 5;
+            case 73: totalTime = 4.75;
+            case 74: totalTime = 4.5;
+            case 75: totalTime = 4.25;
+        }
     }
 
     // Should reset timer or go back to the beginning?
