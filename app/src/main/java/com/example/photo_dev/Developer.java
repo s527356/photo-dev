@@ -44,7 +44,10 @@ public class Developer extends AppCompatActivity {
         new CountDownTimer(calculateTimer(), 1000) {
             @SuppressLint("SetTextI18n")
             public void onTick(long millisUntilFinished) {
-                timerTV.setText(millisUntilFinished / 1000 + " Seconds");
+                int second = (int) (millisUntilFinished / 1000);
+                timerTV.setText(second + " Seconds");
+
+                if(second % 30 == 0) { agitate(); }
                 // Agitate for 5 seconds every 30 seconds
             }
 
@@ -84,15 +87,17 @@ public class Developer extends AppCompatActivity {
 
     // Agitate for 5 seconds every 30 seconds
     private void agitate() {
+        agitateTimerTV.setText("Test");
         new CountDownTimer(5000, 1000) {
-            @SuppressLint("SetTextI18n")
+            @SuppressLint({"SetTextI18n", "DefaultLocale"})
             public void onTick(long millisUntilFinished) {
-                timerTV.setText(millisUntilFinished / 1000 + " Seconds");
+                agitateTimerTV.setText(
+                    String.format("Agitate for %d more seconds", millisUntilFinished / 1000)
+                );
             }
 
-            // Moves to stop bath on finish
             public void onFinish() {
-                timerTV.setText("");
+                agitateTimerTV.setText("");
             }
         }.start();
     }
