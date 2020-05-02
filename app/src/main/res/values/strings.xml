@@ -6,4 +6,6 @@
     <string name="select_temperature_of_developer">Select Temperature of Developer</string>
     <string name="start_developer">Start Developer</string>
     <string name="proceed_to_stop_bath">Proceed to Stop Bath</string>
+    <string name="start_bath">Start Bath</string>
+    <string name="proceed_to_fixer">Proceed to Fixer</string>
 </resources>
