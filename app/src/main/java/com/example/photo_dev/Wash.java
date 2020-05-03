@@ -14,18 +14,17 @@ import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
 
-public class Hypo extends AppCompatActivity {
+public class Wash extends AppCompatActivity {
 
     TextView timerTV, agitateTimerTV;
     Button startDevBN, stopDevBN;
     LottieAnimationView lottieAnimationView;
     Animation animBlink;
-    int temperature;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hypo);
+        setContentView(R.layout.activity_wash);
 
         timerTV = findViewById(R.id.timerTV);
         agitateTimerTV = findViewById(R.id.agitateTimerTV);
@@ -46,7 +45,7 @@ public class Hypo extends AppCompatActivity {
 
         startDevBN.setVisibility(View.GONE);
 
-        agitateTimerTV.setText("Make sure to agitate continuously");
+        agitateTimerTV.setText("Wash under rapid running water");
         animBlink = AnimationUtils.loadAnimation(getApplicationContext(),
                 R.anim.blink);
         agitateTimerTV.startAnimation(animBlink);
@@ -72,9 +71,9 @@ public class Hypo extends AppCompatActivity {
             public void onFinish() {
                 timerTV.setText("");
                 Intent intent = new Intent();
-                intent.setClass(Hypo.this, StopBath.class);
-                Hypo.this.startActivity(intent);
-                Hypo.this.finish();
+                    intent.setClass(Wash.this, StopBath.class);
+                Wash.this.startActivity(intent);
+                Wash.this.finish();
             }
         }.start();
 
@@ -86,10 +85,11 @@ public class Hypo extends AppCompatActivity {
 
     public void stop() {
         Intent intent = new Intent();
-        intent.setClass(Hypo.this,
-                Wash.class);
+        intent.setClass(Wash.this,
+                StopBath.class);
 
-        Hypo.this.startActivity(intent);
-        Hypo.this.finish();
+        Wash.this.startActivity(intent);
+        Wash.this.finish();
     }
 }
+
