@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFCEF"
-    tools:context=".Fixer"
-    tools:showIn="@layout/activity_fixer">
+    tools:context=".Hypo"
+    tools:showIn="@layout/activity_hypo">
 
     <Button
         android:id="@+id/startDevBN"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="220dp"
         android:layout_height="208dp"
-        android:text="Start Fixer"
+        android:text="Start Hypo Clear"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -34,7 +34,7 @@
 
         app:lottie_autoPlay="false"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/fixer"
+        app:lottie_rawRes="@raw/hypo_clear"
 
         />
 
@@ -43,7 +43,7 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Proceed to Rinse"
+        android:text="Proceed to wash"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

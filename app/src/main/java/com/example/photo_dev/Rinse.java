@@ -53,7 +53,7 @@ public class Rinse extends AppCompatActivity {
 
         public void stop() {
             Intent intent = new Intent();
-            intent.setClass(Rinse.this, StopBath.class);
+            intent.setClass(Rinse.this, Hypo.class);
             Rinse.this.startActivity(intent);
             Rinse.this.finish();
         }
