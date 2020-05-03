@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -17,6 +19,7 @@ public class Fixer extends AppCompatActivity {
     TextView timerTV, agitateTimerTV;
     Button startDevBN, stopDevBN;
     LottieAnimationView lottieAnimationView;
+    Animation animBlink;
     int temperature;
 
     @Override
@@ -38,11 +41,61 @@ public class Fixer extends AppCompatActivity {
     public void start() {
         startDevBN.setVisibility(View.GONE);
 
+        // Countdown timer for developer
+        new CountDownTimer(600000, 1000) {
+            @SuppressLint("SetTextI18n")
+            public void onTick(long millisUntilFinished) {
+                int second = (int) (millisUntilFinished / 1000);
+                int minute = (int) ((millisUntilFinished / 1000) /60);
+                int seconds = (int)((millisUntilFinished / 1000) % 60);
+                if (minute < 10 && seconds < 10){
+                    timerTV.setText("0" + minute + " : 0" +  seconds);
+                }
+                else if (minute < 10) {
+                    timerTV.setText("0" + minute + " : " + seconds);
+                }
+                else if (seconds < 10) {
+                    timerTV.setText(minute + " : 0" + seconds);
+                }
 
+                if(second % 30 == 0) { agitate(); }
+                // Agitate for 5 seconds every 30 seconds
+            }
 
-        agitateTimerTV.setText("THIS WORKS NOW!");
+            // Moves to stop bath on finish
+            public void onFinish() {
+                timerTV.setText("");
+                Intent intent = new Intent();
+                intent.setClass(Fixer.this, StopBath.class);
+                Fixer.this.startActivity(intent);
+                Fixer.this.finish();
+            }
+        }.start();
 
+        lottieAnimationView.setVisibility(View.VISIBLE);
+        lottieAnimationView.playAnimation();
         stopDevBN.setVisibility(View.VISIBLE);
+    }
+
+    // Agitate for 5 seconds every 30 seconds
+    private void agitate() {
+        agitateTimerTV.setText("Test");
+        new CountDownTimer(5000, 1000) {
+            @SuppressLint({"SetTextI18n", "DefaultLocale"})
+            public void onTick(long millisUntilFinished) {
+                agitateTimerTV.setText(
+                        String.format("Agitate for %d more seconds", millisUntilFinished / 1000)
+                );
+                animBlink = AnimationUtils.loadAnimation(getApplicationContext(),
+                        R.anim.blink);
+                agitateTimerTV.startAnimation(animBlink);
+            }
+
+            public void onFinish() {
+                agitateTimerTV.setText("");
+                agitateTimerTV.clearAnimation();
+            }
+        }.start();
     }
 
 

@@ -37,7 +37,17 @@ public class StopBath extends AppCompatActivity {
             @SuppressLint("SetTextI18n")
             public void onTick(long millisUntilFinished) {
                 int second = (int) (millisUntilFinished / 1000);
-                bathTimerTV.setText("Agitate for " + second + " Seconds");
+                int minute = (int) ((millisUntilFinished / 1000) /60);
+                int seconds = (int)((millisUntilFinished / 1000) % 60);
+                if (minute < 10 && seconds < 10){
+                    bathTimerTV.setText("Agitate continuously for \n" + "0" + minute + " : 0" +  seconds);
+                }
+                else if (minute < 10) {
+                    bathTimerTV.setText("Agitate continuously for \n" + "0" + minute + " : " + seconds);
+                }
+                else if (seconds < 10) {
+                    bathTimerTV.setText("Agitate continuously for \n" + minute + " : 0" + seconds);
+                }
             }
 
             // Moves to stop bath on finish

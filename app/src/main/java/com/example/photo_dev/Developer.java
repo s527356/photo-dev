@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.CountDownTimer;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -18,6 +20,7 @@ public class Developer extends AppCompatActivity {
     TextView timerTV, agitateTimerTV;
     Button startDevBN, stopDevBN;
     LottieAnimationView lottieAnimationView;
+    Animation animBlink;
     int temperature;
 
     @Override
@@ -45,7 +48,18 @@ public class Developer extends AppCompatActivity {
             @SuppressLint("SetTextI18n")
             public void onTick(long millisUntilFinished) {
                 int second = (int) (millisUntilFinished / 1000);
-                timerTV.setText(second + " Seconds");
+                int minute = (int) ((millisUntilFinished / 1000) /60);
+                int seconds = (int)((millisUntilFinished / 1000) % 60);
+                if (minute < 10 && seconds < 10){
+                    timerTV.setText("0" + minute + " : 0" +  seconds);
+                }
+                else if (minute < 10) {
+                    timerTV.setText("0" + minute + " : " + seconds);
+                }
+                else if (seconds < 10) {
+                    timerTV.setText(minute + " : 0" + seconds);
+                }
+
 
                 if(second % 30 == 0) { agitate(); }
                 // Agitate for 5 seconds every 30 seconds
@@ -94,10 +108,14 @@ public class Developer extends AppCompatActivity {
                 agitateTimerTV.setText(
                     String.format("Agitate for %d more seconds", millisUntilFinished / 1000)
                 );
+                animBlink = AnimationUtils.loadAnimation(getApplicationContext(),
+                        R.anim.blink);
+                agitateTimerTV.startAnimation(animBlink);
             }
 
             public void onFinish() {
                 agitateTimerTV.setText("");
+                agitateTimerTV.clearAnimation();
             }
         }.start();
     }
