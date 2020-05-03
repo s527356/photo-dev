@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
 
-public class Wash extends AppCompatActivity {
+public class Flo extends AppCompatActivity {
 
     TextView timerTV, agitateTimerTV;
     Button startDevBN, stopDevBN;
@@ -24,7 +24,7 @@ public class Wash extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wash);
+        setContentView(R.layout.activity_flo);
 
         timerTV = findViewById(R.id.timerTV);
         agitateTimerTV = findViewById(R.id.agitateTimerTV);
@@ -45,35 +45,31 @@ public class Wash extends AppCompatActivity {
 
         startDevBN.setVisibility(View.GONE);
 
-        agitateTimerTV.setText("Wash under rapid running water");
+        agitateTimerTV.setText("Swirl reel in solution");
         animBlink = AnimationUtils.loadAnimation(getApplicationContext(),
                 R.anim.blink);
         agitateTimerTV.startAnimation(animBlink);
 
-        new CountDownTimer(120000, 1000) {
+        new CountDownTimer(30000, 1000) {
             @SuppressLint("SetTextI18n")
             public void onTick(long millisUntilFinished) {
                 int second = (int) (millisUntilFinished / 1000);
                 int minute = (int) ((millisUntilFinished / 1000) /60);
                 int seconds = (int)((millisUntilFinished / 1000) % 60);
-                if (minute < 10 && seconds < 10){
-                    timerTV.setText("0" + minute + " : 0" +  seconds);
+
+                if (second < 10) {
+                    timerTV.setText( "0" + second);
                 }
-                else if (minute < 10) {
-                    timerTV.setText("0" + minute + " : " + seconds);
-                }
-                else if (seconds < 10) {
-                    timerTV.setText(minute + " : 0" + seconds);
-                }
+
             }
 
             // Moves to stop bath on finish
             public void onFinish() {
                 timerTV.setText("");
                 Intent intent = new Intent();
-                    intent.setClass(Wash.this, Flo.class);
-                Wash.this.startActivity(intent);
-                Wash.this.finish();
+                intent.setClass(Flo.this, Done.class);
+                Flo.this.startActivity(intent);
+                Flo.this.finish();
             }
         }.start();
 
@@ -85,11 +81,11 @@ public class Wash extends AppCompatActivity {
 
     public void stop() {
         Intent intent = new Intent();
-        intent.setClass(Wash.this,
-                Flo.class);
+        intent.setClass(Flo.this,
+                Done.class);
 
-        Wash.this.startActivity(intent);
-        Wash.this.finish();
+        Flo.this.startActivity(intent);
+        Flo.this.finish();
     }
 }
 
