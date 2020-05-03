@@ -103,7 +103,7 @@ public class Fixer extends AppCompatActivity {
     // Should reset timer or go back to the beginning?
     public void stop() {
         Intent intent = new Intent();
-        intent.setClass(Fixer.this, Developer.class);
+        intent.setClass(Fixer.this, Rinse.class);
         Fixer.this.startActivity(intent);
         Fixer.this.finish();
     }
